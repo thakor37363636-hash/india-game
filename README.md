@@ -1,63 +1,35 @@
-# 🤖 Gujarati Super AI
+# 🎮 India Multi-Language Game
 
-Gujarati Super AI એ એક મફત (Free) વેબ આધારિત AI સહાયક છે, જે ગુજરાતી ભાષામાં પ્રશ્નોના જવાબ આપે છે.
-
-આ પ્રોજેક્ટનો હેતુ વિદ્યાર્થીઓ, સામાન્ય લોકો અને ગુજરાતી ભાષા વપરાશકર્તાઓને
-સરળ અને સમજાય તેવી રીતે AI મદદ પૂરી પાડવાનો છે.
+India Multi-Language Game એક simple, fast અને free web-based game છે,  
+જે આખા ભારત માટે બનાવવામાં આવી છે 🇮🇳  
+આ game English, Hindi અને Gujarati ભાષામાં support કરે છે.
 
 ---
 
 ## 🌟 Features
 
-- 🗣️ સંપૂર્ણ ગુજરાતી ભાષા સપોર્ટ
-- 📚 ધોરણ 1 થી 12 સુધીના પ્રશ્નોના જવાબ
-- 🤖 AI આધારિત ચેટ સિસ્ટમ
-- ⚡ ઝડપી અને સરળ ઉપયોગ
-- 🌐 વેબ આધારિત (કોઈ એપ ઇન્સ્ટોલ કરવાની જરૂર નથી)
-- 💯 100% Free
+- 🎮 Simple & addictive gameplay
+- 🌐 Multi-Language Support  
+  - English  
+  - हिंदी  
+  - ગુજરાતી  
+- 📱 Mobile & Desktop friendly
+- ⚡ Fast loading (Pure HTML, CSS, JavaScript)
+- 💯 100% Free & Open Source
+- 🚫 No login required
 
 ---
 
 ## 🛠️ Technologies Used
 
-- HTML, CSS, JavaScript
-- GitHub Pages (Free Hosting)
-- AI API (Future Upgrade – Super Power AI)
+- HTML5  
+- CSS3  
+- JavaScript (Vanilla JS)  
+- Canvas API  
+- GitHub Pages / Netlify (Free Hosting)
 
 ---
 
-## 🚀 Live Website
+## 🚀 Live Demo
 
-👉 Website link will be available here after deployment.
-
-(Coming Soon)
-
----
-
-## 📌 Future Plans
-
-- 🔐 Login System
-- 📘 Subject-wise Pages
-- 📝 Quizzes & Practice Tests
-- 🤖 Super Power AI (ChatGPT જેવી AI)
-- 📱 Mobile Friendly UI
-
----
-
-## 🤝 Contribution
-
-આ પ્રોજેક્ટ ઓપન સોર્સ છે.  
-તમારે સૂચન, સુધારા અથવા નવા ફીચર માટે Pull Request કરી શકો છો.
-
----
-
-## 📄 License
-
-This project is open-source and free to use for educational purposes.
-
----
-
-## 👤 Author
-
-**Mitul Thakor**  
-Gujarati AI Enthusiast 🇮🇳
+👉 Live Game URL:
