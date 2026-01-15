@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gujarati Super AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .answer {
+      background: white;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 6px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🤖 Gujarati Super AI</h1>
+  <p>ગુજરાતી માં પ્રશ્ન પૂછો – સરળ જવાબ મેળવો</p>
+</header>
+
+<main>
+  <h3>તમારો પ્રશ્ન લખો:</h3>
+  <textarea id="question" placeholder="ઉદાહરણ: ભારતની રાજધાની કઈ છે?"></textarea>
+  <br>
+  <button onclick="askAI()">AI ને પૂછો</button>
+
+  <div class="answer" id="answer" style="display:none;"></div>
+</main>
+
+<footer>
+  © 2026 Gujarati Super AI | Free AI Project
+</footer>
+
+<script>
+  function askAI() {
+    const q = document.getElementById("question").value;
+    const ans = document.getElementById("answer");
+
+    if (q.trim() === "") {
+      alert("કૃપા કરીને પ્રશ્ન લખો");
+      return;
+    }
+
+    ans.style.display = "block";
+    ans.innerHTML = "🤖 AI જવાબ:<br><br> તમે લખ્યું → <b>" + q + "</b><br><br>(હવે આગળ real AI જોડાશે)";
+  }
+</script>
+
+</body>
+</html>
