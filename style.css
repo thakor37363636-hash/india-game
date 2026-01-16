@@ -1,61 +1,89 @@
+/* General body style */
 body {
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-  background: linear-gradient(135deg, #f5af19, #f12711);
-  color: #fff;
-  margin: 0;
-  padding: 0;
-}
-
-header h1 {
-  margin-top: 20px;
-  font-size: 2.5rem;
-  text-shadow: 2px 2px #000;
-}
-
-header p {
-  margin-bottom: 40px;
-  font-size: 1.2rem;
-}
-
-main {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f6d365, #fda085);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 20px;
 }
 
-.slot-box {
-  width: 120px;
-  height: 120px;
-  border: 4px solid #fff;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  background: rgba(255,255,255,0.2);
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+/* Header */
+header {
+  text-align: center;
+  margin: 20px 0;
 }
 
-#playButton {
-  padding: 15px 40px;
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header p {
   font-size: 1.2rem;
-  border: none;
-  border-radius: 12px;
-  background: #ffde00;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
+  margin: 5px 0 0 0;
 }
 
-#playButton:hover {
-  background: #fff;
-  transform: scale(1.05);
-}
-
+/* Coin Display */
 #coins {
   font-size: 1.5rem;
   font-weight: bold;
+  margin: 20px 0;
+}
+
+/* Slot Machine */
+.slot-container {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.slot {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+/* Spin Button */
+#playButton {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: #ff5e62;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#playButton:hover {
+  transform: scale(1.05);
+  background: #ff2e2e;
+}
+
+/* Message display */
+#message {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  padding: 15px 0;
+  color: #fff;
+  font-size: 0.9rem;
 }
