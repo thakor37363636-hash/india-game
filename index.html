@@ -1,125 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>India Multi-Language Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+body {
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #f5af19, #f12711);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
-      text-align: center;
-    }
+header h1 {
+  margin-top: 20px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px #000;
+}
 
-    h1 {
-      margin-top: 20px;
-    }
+header p {
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+}
 
-    #gameBox {
-      width: 300px;
-      height: 300px;
-      background: #fff;
-      margin: 30px auto;
-      position: relative;
-      border-radius: 10px;
-      border: 2px solid #333;
-      overflow: hidden;
-    }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
 
-    #player {
-      width: 40px;
-      height: 40px;
-      background: red;
-      position: absolute;
-      top: 130px;
-      left: 130px;
-      border-radius: 50%;
-    }
+.slot-box {
+  width: 120px;
+  height: 120px;
+  border: 4px solid #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
 
-    .btn {
-      padding: 10px 20px;
-      font-size: 16px;
-      margin: 5px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background: #000;
-      color: #fff;
-    }
+#playButton {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: #ffde00;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    #score {
-      font-size: 18px;
-      font-weight: bold;
-    }
+#playButton:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
 
-    footer {
-      margin-top: 20px;
-      font-size: 14px;
-    }
-  </style>
-</head>
-
-<body>
-
-<h1 id="title">🎮 India Game</h1>
-<p id="info">Tap buttons to move the ball</p>
-
-<div id="gameBox">
-  <div id="player"></div>
-</div>
-
-<p id="score">Score: 0</p>
-
-<div>
-  <button class="btn" onclick="move('up')">⬆️</button><br/>
-  <button class="btn" onclick="move('left')">⬅️</button>
-  <button class="btn" onclick="move('right')">➡️</button><br/>
-  <button class="btn" onclick="move('down')">⬇️</button>
-</div>
-
-<footer>
-  Made in India 🇮🇳 | Free Web Game
-</footer>
-
-<script>
-  let player = document.getElementById("player");
-  let scoreText = document.getElementById("score");
-  let score = 0;
-
-  let x = 130;
-  let y = 130;
-
-  function move(direction) {
-    if (direction === "up" && y > 0) y -= 10;
-    if (direction === "down" && y < 260) y += 10;
-    if (direction === "left" && x > 0) x -= 10;
-    if (direction === "right" && x < 260) x += 10;
-
-    player.style.left = x + "px";
-    player.style.top = y + "px";
-
-    score++;
-    scoreText.innerText = "Score: " + score;
-  }
-
-  // Language Auto Detect
-  let lang = navigator.language || "en";
-
-  if (lang.startsWith("hi")) {
-    document.getElementById("title").innerText = "🎮 भारत खेल";
-    document.getElementById("info").innerText = "बटन दबाकर गेंद चलाएं";
-    scoreText.innerText = "स्कोर: 0";
-  }
-
-  if (lang.startsWith("gu")) {
-    document.getElementById("title").innerText = "🎮 ભારત રમત";
-    document.getElementById("info").innerText = "બટન દબાવીને બોલ ખસેડો";
-    scoreText.innerText = "સ્કોર: 0";
-  }
-</script>
-
-</body>
-</html>
+#coins {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
