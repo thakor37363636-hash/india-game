@@ -1,54 +1,44 @@
+// Initial coins
 let coins = 100;
 
-const slotSymbols = ['🍒','🍋','🍊','🍉','⭐','💎','7️⃣'];
+// Get DOM elements
+const coinsDisplay = document.getElementById("coins");
+const slot = document.getElementById("slot");
+const playButton = document.getElementById("playButton");
 
-const coinsDisplay = document.getElementById('coins');
-const slot1 = document.getElementById('slot1');
-const slot2 = document.getElementById('slot2');
-const slot3 = document.getElementById('slot3');
-const playButton = document.getElementById('playButton');
-const message = document.getElementById('message');
+// Possible slot symbols
+const symbols = ["🍒", "🍋", "🍉", "⭐", "💎", "7️⃣"];
 
-function spinSlots() {
+// Function to spin the slot
+function spin() {
   if (coins <= 0) {
-    message.textContent = "💀 No coins left! Refresh to play again.";
+    alert("તમારા કોইન ખતમ થઈ ગયા છે! રમત ફરી શરુ કરો.");
     return;
   }
 
-  coins -= 10; // Each spin costs 10 coins
+  // Deduct 10 coins per spin
+  coins -= 10;
   coinsDisplay.textContent = `Coins: ${coins}`;
-  message.textContent = "";
 
-  // Randomly pick symbols
-  const s1 = slotSymbols[Math.floor(Math.random()*slotSymbols.length)];
-  const s2 = slotSymbols[Math.floor(Math.random()*slotSymbols.length)];
-  const s3 = slotSymbols[Math.floor(Math.random()*slotSymbols.length)];
-
-  // Animate slots
-  slot1.textContent = '🎰';
-  slot2.textContent = '🎰';
-  slot3.textContent = '🎰';
-
+  // Animate slot
+  slot.style.transform = "rotateX(360deg)";
   setTimeout(() => {
-    slot1.textContent = s1;
-    slot2.textContent = s2;
-    slot3.textContent = s3;
+    // Randomly pick a symbol
+    const randomIndex = Math.floor(Math.random() * symbols.length);
+    const randomSymbol = symbols[randomIndex];
 
-    // Check win
-    if (s1 === s2 && s2 === s3) {
-      const winCoins = 50;
-      coins += winCoins;
+    // Show the symbol
+    slot.textContent = randomSymbol;
+    slot.style.transform = "rotateX(0deg)";
+
+    // Win conditions
+    if (randomSymbol === "7️⃣") {
+      coins += 100; // Win 100 coins if 7 appears
       coinsDisplay.textContent = `Coins: ${coins}`;
-      message.textContent = `🎉 Jackpot! You won ${winCoins} coins!`;
-    } else if (s1 === s2 || s2 === s3 || s1 === s3) {
-      const winCoins = 20;
-      coins += winCoins;
-      coinsDisplay.textContent = `Coins: ${coins}`;
-      message.textContent = `✨ Nice! You won ${winCoins} coins!`;
-    } else {
-      message.textContent = "😢 Try again!";
+      alert("🎉 Congratulations! You won 100 coins!");
     }
-  }, 500);
+  }, 200);
 }
 
-playButton.addEventListener('click', spinSlots);
+// Add click event to button
+playButton.addEventListener("click", spin);
