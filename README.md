@@ -1,35 +1,43 @@
-# 🎮 India Multi-Language Game
+# 🎰 Super Power 777 Game
 
-India Multi-Language Game એક simple, fast અને free web-based game છે,  
-જે આખા ભારત માટે બનાવવામાં આવી છે 🇮🇳  
-આ game English, Hindi અને Gujarati ભાષામાં support કરે છે.
+**Super Power 777** એ એક મજા ભરેલો slot machine game છે, જે વેબ પર ચલાવી શકાય છે.  
+તમારી નવી superhero journey શરૂ કરો અને coins જીતો! 💎✨
+
+## 🕹️ Gameplay
+- Game start કરવા માટે **SPIN** button પર click કરો.  
+- દરેક spin 10 coins ખર્ચે છે.  
+- 3 identical symbols → Jackpot! 50 coins જીતો.  
+- 2 identical symbols → Nice! 20 coins જીતો.  
+- No match → Try again! 😢
+
+## 💻 Technologies Used
+- HTML  
+- CSS  
+- JavaScript  
+
+## 🎨 Features
+- Interactive slot machine animations  
+- Coin counter  
+- Fun emojis as slot symbols  
+- Responsive & mobile friendly  
+
+## 🚀 Play Online
+- GitHub Pages: *(આપ deployment પછી URL અહીં આપશો)*  
+- Example: `https://username.github.io/india-game/`
+
+## 📌 Future Upgrades
+- Sounds and animations  
+- Power-ups and special symbols  
+- Leaderboard for high scores  
+- Multiplayer / PvP mode  
+
+## 👤 Author
+Mitul Thakor  
+Gujarati Game & AI Enthusiast 🇮🇳
 
 ---
 
-## 🌟 Features
-
-- 🎮 Simple & addictive gameplay
-- 🌐 Multi-Language Support  
-  - English  
-  - हिंदी  
-  - ગુજરાતી  
-- 📱 Mobile & Desktop friendly
-- ⚡ Fast loading (Pure HTML, CSS, JavaScript)
-- 💯 100% Free & Open Source
-- 🚫 No login required
-
----
-
-## 🛠️ Technologies Used
-
-- HTML5  
-- CSS3  
-- JavaScript (Vanilla JS)  
-- Canvas API  
-- GitHub Pages / Netlify (Free Hosting)
-
----
-
-## 🚀 Live Demo
-
-👉 Live Game URL:
+🛠️ **Instructions to Run Locally**  
+1. Clone this repo  
+2. Open `index.html` in any browser  
+3. Enjoy the game! 🎉
