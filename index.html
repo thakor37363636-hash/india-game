@@ -1,29 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Super Power 777 Game</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Tap Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial;
+      background: #020617;
+      color: white;
+      text-align: center;
+      margin: 0;
+    }
+    #game {
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      border: 2px dashed #22c55e;
+      margin: 10px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background: #22c55e;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Game Title -->
-  <header>
-    <h1>🎰 Super Power 777</h1>
-    <p>Spin the wheel & win coins!</p>
-  </header>
+<h2>🎮 Tap Game</h2>
+<p>Score: <span id="score">0</span></p>
+<p>Time: <span id="time">30</span>s</p>
 
-  <!-- Game Area -->
-  <main>
-    <div id="coins">Coins: 100</div>
-    <div class="slot-box">
-      <span id="slot">❓</span>
-    </div>
-    <button id="playButton">SPIN</button>
-  </main>
+<div id="game">Tap Anywhere</div>
+<br>
+<button onclick="startGame()">Start / Restart</button>
 
-  <!-- JS -->
-  <script src="game.js"></script>
+<script>
+let score = 0;
+let time = 30;
+let timer;
+
+function startGame() {
+  score = 0;
+  time = 30;
+  document.getElementById("score").innerText = score;
+  document.getElementById("time").innerText = time;
+
+  clearInterval(timer);
+  timer = setInterval(() => {
+    time--;
+    document.getElementById("time").innerText = time;
+    if (time <= 0) {
+      clearInterval(timer);
+      alert("Game Over! Score: " + score);
+    }
+  }, 1000);
+}
+
+document.getElementById("game").onclick = () => {
+  if (time > 0) {
+    score++;
+    document.getElementById("score").innerText = score;
+  }
+};
+</script>
+
 </body>
 </html>
