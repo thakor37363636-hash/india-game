@@ -1,4 +1,5 @@
-let score = 0;
+let highScore = localStorage.getItem("highScore") || 0;
+document.getElementById("highScore").innerText = highScore;let score = 0;
 let time = 30;
 let timer = null;
 
