@@ -1,19 +1,30 @@
-# 🎰 Super Power 777 Game
+# 🎮 Super Power Tap Game
 
-Super Power 777 એ મજા ભરેલો slot game છે, જ્યાં તમે spin કરીને coins જીતો અને તમારી fortune ચેક કરો!  
+A simple, fast and fun **Tap Game** made using **HTML, CSS and JavaScript**.  
+This game works perfectly on **mobile and desktop browsers** and can be hosted for **FREE on GitHub Pages**.
 
-## 💡 Features
-- Fun and interactive slot game
-- Win 100 coins if you get 7️⃣
-- Cool animations and flashy UI
-- Easy to play
+---
 
-## 🛠️ Technologies Used
-- HTML, CSS, JavaScript
-- Browser-based (No installation required)
+## 🕹️ How to Play
+- Click **Start / Restart**
+- Tap anywhere inside the game box
+- Each tap = +1 score
+- You have **30 seconds**
+- Game ends automatically and shows your score
 
-## 🚀 Play Online
-Website link: [Coming Soon]
+---
 
-## 👤 Author
-Mitul Thakor
+## 🚀 Live Demo
+👉 Open using GitHub Pages after deployment
+
+---
+
+## 🛠️ Tech Used
+- HTML5
+- CSS3
+- JavaScript (Vanilla JS)
+- GitHub Pages (Free Hosting)
+
+---
+
+## 📂 Project Files
