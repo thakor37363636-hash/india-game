@@ -1,77 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tap Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      font-family: Arial;
-      background: #020617;
-      color: white;
-      text-align: center;
-      margin: 0;
-    }
-    #game {
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      border: 2px dashed #22c55e;
-      margin: 10px;
-    }
-    button {
-      padding: 12px 20px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      background: #22c55e;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#1a1a2e">
+  <meta name="description" content="Tap Target - A hyper-casual one-tap reflex game. Test your reflexes!">
+  
+  <title>Tap Target - Reflex Game</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Preload critical scripts -->
+  <link rel="preload" href="js/storage.js" as="script">
+  <link rel="preload" href="js/audio.js" as="script">
+  <link rel="preload" href="js/target.js" as="script">
+  <link rel="preload" href="js/game.js" as="script">
 </head>
 <body>
-<div class="top-bar">
-  <div class="card">⏱ Time<br><span id="time">30</span>s</div>
-  <div class="card">⭐ High<br><span id="highScore">0</span></div>
-  <div class="card">🔥 Score<br><span id="score">0</span></div>
-</div>
-<h2>🎮 Tap Game</h2>
-<p>Score: <span id="score">0</span></p>
-<p>Time: <span id="time">30</span>s</p>
-<p>High Score: <span id="highScore">0</span></p>
-<div id="game">Tap Anywhere</div>
-<br>
-<button onclick="startGame()">Start / Restart</button>
+  
+  <!-- Settings Toggle -->
+  <div class="settings-toggle">
+    <button id="sound-toggle" class="toggle-btn" title="Toggle Sound">🔊</button>
+    <button id="vibration-toggle" class="toggle-btn" title="Toggle Vibration">📳</button>
+  </div>
 
-<script>
-let score = 0;
-let time = 30;
-let timer;
+  <!-- Start Screen -->
+  <div id="start-screen" class="screen">
+    <div class="game-icon">🎯</div>
+    <h1 class="game-title">TAP TARGET</h1>
+    
+    <div class="high-score-display">
+      <div class="high-score-label">🏆 BEST SCORE</div>
+      <div class="high-score-value" id="high-score">0</div>
+    </div>
+    
+    <button id="start-btn" class="btn">
+      ▶ TAP TO START
+    </button>
+    
+    <p style="margin-top: 20px; color: #a0a0a0; font-size: 0.9rem;">
+      Tap the targets as fast as you can!<br>
+      You have 30 seconds
+    </p>
+  </div>
 
-function startGame() {
-  score = 0;
-  time = 30;
-  document.getElementById("score").innerText = score;
-  document.getElementById("time").innerText = time;
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen">
+    <div class="game-header">
+      <div class="game-stat">
+        <div class="stat-label">🔥 SCORE</div>
+        <div class="stat-value" id="score">0</div>
+      </div>
+      
+      <div class="game-stat">
+        <div class="stat-label">⏱ TIME</div>
+        <div class="stat-value" id="timer">30</div>
+      </div>
+    </div>
+    
+    <div id="game-area">
+      <!-- Targets will spawn here -->
+    </div>
+    
+    <div id="combo-text" class="combo-display">
+      <span>🎯 COMBO:</span>
+      <span id="combo">0</span>
+    </div>
+  </div>
 
-  clearInterval(timer);
-  timer = setInterval(() => {
-    time--;
-    document.getElementById("time").innerText = time;
-    if (time <= 0) {
-      clearInterval(timer);
-      alert("Game Over! Score: " + score);
+  <!-- Game Over Screen -->
+  <div id="gameover-screen" class="screen">
+    <h2 class="game-over-title">GAME OVER!</h2>
+    
+    <div class="score-card">
+      <div class="score-label">YOUR SCORE</div>
+      <div class="score-value current">
+        <span>🔥</span>
+        <span id="final-score">0</span>
+      </div>
+    </div>
+    
+    <div class="score-card">
+      <div class="score-label">BEST SCORE</div>
+      <div class="score-value best">
+        <span>🏆</span>
+        <span id="best-score">0</span>
+      </div>
+    </div>
+    
+    <div id="new-record" class="new-record-badge">
+      🎉 NEW RECORD! 🎉
+    </div>
+    
+    <button id="restart-btn" class="btn">
+      🔄 PLAY AGAIN
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/storage.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/target.js"></script>
+  <script src="js/game.js"></script>
+  
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('Service Worker registered'))
+          .catch(err => console.log('Service Worker registration failed:', err));
+      });
     }
-  }, 1000);
-}
-
-document.getElementById("game").onclick = () => {
-  if (time > 0) {
-    score++;
-    document.getElementById("score").innerText = score;
-  }
-};
-</script>
-
+  </script>
 </body>
 </html>
